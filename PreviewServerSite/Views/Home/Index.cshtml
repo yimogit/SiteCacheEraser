@@ -1,0 +1,51 @@
+﻿@using PreviewServerSite.Models
+@model List<PreviewServerSite.Models.SiteModel>
+@{
+    Layout = null;
+    
+}
+<!doctype>
+<html>
+    <head>
+        <title>IIS网站预览-没什么乱用，但是感觉写法可以留存下来</title>
+        <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <table  class="table table-hover">
+            <thead>
+                <tr>
+                    <th>操作</th>
+                    
+                        @foreach (var item2 in typeof(SiteModel).GetProperties())
+                        {
+                            <th>
+                                @item2.Name
+                            </th>
+                        }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @foreach (var t in typeof (SiteOperat).GetEnumNames())
+                            {
+                                <button  onclick="javascript:window.open(@string.Format("'/Home/SiteOperation?name={0}&type={1}'",item.网站名称,t))">
+                                    @t
+                                </button>
+                            }
+                        </td>
+                        @foreach (var item2 in item.GetType().GetProperties())
+                        {
+                            <td>
+                                @item2.GetValue(item,null)
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </body>
+</html>
