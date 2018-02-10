@@ -1,6 +1,6 @@
 @echo off
 REM 远程地址
-set ycip=192.168.1.123
+set ycip=127.0.0.1
 REM 服务器登陆名
 set ycname=Administrator
 REM 服务器登陆密码

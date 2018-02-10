@@ -196,7 +196,7 @@ namespace ClearCacheWinForm
         private void LoadGroup()
         {
             allGroup.Add("", new List<string>());
-            //allGroup.Add("所有", new List<string>());
+            allGroup.Add("所有", new List<string>());
             GetSettingToList("groupNames").ForEach(e =>
             {
                 if (!string.IsNullOrEmpty(e) && GetSettingToList(e).Count > 0)

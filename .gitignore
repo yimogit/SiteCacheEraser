@@ -187,3 +187,6 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+/.vs/ClearCache/v15/sqlite3
+/.vs/config
+/.nuget

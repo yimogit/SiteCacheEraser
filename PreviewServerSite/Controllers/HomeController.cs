@@ -23,6 +23,7 @@ namespace PreviewServerSite.Controllers
             return View(sitesInfo);
         }
 
+
         public ActionResult SiteOperation(string name, SiteOperat type)
         {
             try
